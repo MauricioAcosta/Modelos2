@@ -1,15 +1,11 @@
+def mcd(numero1,numero2):
+	if numero2 == 0:
+		return numero1
+	return mcd(numero2, numero1 % numero2)
+ 
 
-# define la función
-def mcd(a, b):
-	resto = 0
-	while(b > 0):
-		resto = b
-		b = a % b
-		a = resto
-	return a
+numero1 = int(input("Introduce el primer numero: "))
+numero2 = int(input("Introduce el segundo numero: "))
+ 
+print("El máximo común divisor de ", numero1," y ", numero2," es ", mcd(numero1, numero2))
 
-# solicitamos los dos números
-num1 = int(input("Introduce el primer numero: "))
-num2 = int(input("Introduce el segundo numero: "))
-
-print("El máximo común divisor de ", num1," y ", num2," es ", mcd(num1, num2))
