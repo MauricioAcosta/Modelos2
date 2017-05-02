@@ -28,14 +28,11 @@ class Predictor:
     def buscarPorPalabra(self, palabras):
         listaPalabras = list(palabras)
         def buscarPorLista(nivel, indice, letras, hijos, palabra):
-            #print(nivel, len(hijos), indice)
-            #print(nivel >= len(letras), indice < len(hijos))
             while indice < len(hijos):
                 if nivel >= len(letras): # no existe letras[nivel]
                     palabra.append(hijos[0].elemento)
                     return buscarPorLista(nivel + 1, 0, letras, hijos[0].hijos, palabra)
                 elif letras[nivel] == hijos[indice].elemento:
-                    #print(letras[nivel])
                     palabra.append(hijos[indice].elemento)
                     return buscarPorLista(nivel + 1, 0, letras, hijos[indice].hijos, palabra)
                 else:
