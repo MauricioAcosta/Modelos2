@@ -1,12 +1,9 @@
-#! /usr/bin/env python
-# -*- coding: utf-8 -*-
-print ('Potencia de n a la m')
-num=int(input('Ingrese el Numero a elevar \n'))
-num2=int(input('Ingrese el Numero de la potencia \n'))
-def potencia(num,num2):
-    if num2==0:
-        return 1
-       
-    else:
-        return num*(potencia(num,num2-1))
-print (potencia(num,num2))
+def palindromo(s):
+    print("hola")
+    return (len(s)<2)or(s[0]!=s[-1])or(palindromo(s[1:-1]))
+print("ingrese la palabra o frase")
+frase = input()
+if(frase==palindromo(frase)):
+    print("es palindroma")
+else:
+    print("no es palindroma")
