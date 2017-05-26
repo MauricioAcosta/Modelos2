@@ -1,0 +1,26 @@
+-inicio('x',[2,6]).
+ -fin('y',[4,5]).
+ -conectar([2,6],[2,7]).
+ -conectar([2,7],[2,8]).
+ -conectar([2,8],[3,8]).
+ -conectar([3,8],[4,8]).
+ -conectar([2,6],[2,5]).
+ -conectar([2,5],[2,4]).
+ -conectar([2,4],[2,3]).
+ -conectar([2,3],[2,2]).
+ -conectar([2,2],[3,2]).
+ -conectar([3,2],[4,2]).
+ -conectar([4,2],[4,3]).
+ -conectar([4,3],[4,4]).
+ -conectar([4,4],[4,5]).
+ -
+ -conectado(X,Y):- conectar(X,Y).
+ -conectado(X,Y):- conectar(Y,X).
+ -
+ -pertenece(X,[X|_]) :- !.
+ -pertenece(X,[_|R]) :- pertenece(X,R).
+ -concatenar([],L,L).
+ -concatenar([X|L1],L2,[X|L3]):-concatenar(L1,L2,L3).
+ -
+ -ruta(X,Y,F):-conectado(X,Y),F.
+ -ruta(X,Y,F):-conectado(X,Z),Y is Z,concatenar(F,Y,F),ruta(Y,_,F).
