@@ -1,0 +1,44 @@
+body {
+	font-size:22px;
+	margin:60;
+	padding:60;
+     height: 90vh;
+    background-image: url(halo1.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+
+form {
+    /* Sólo para centrar el formulario a la página */
+    margin: 0 auto;
+    width: 600px;
+    padding: 1em;
+    border: 5px solid #CCC;
+    border-radius: 1em;
+}
+form div + div {
+    margin-top: 1em;
+}
+h1{
+width: 400px;
+margin: 0 auto;
+font-family:Comic Sans MS;
+font-weight:small-caps;
+color:"black";
+}
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+	font-weight:800;
+	padding:7px 20px 0 20px;
+}
+.button{
+    padding-left: 200px; /* mismo tamaño a todos los elementos label */
+}
+button{
+    margin-left: .5em;
+}
