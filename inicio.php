@@ -6,7 +6,33 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
+
 <body class="gamesTemplate">
+	<?php
+	$servername = "localhost";
+	$username = "game";
+	$password = "game";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+	//echo "Connected successfully";
+
+	$sql = "USE juego";
+	if (mysqli_query($conn, $sql)) {
+	   // echo "Ingreso a la base de datos";
+	} else {
+	    echo "Error creating database: " . mysqli_error($conn);
+}
+
+$conn->close();
+
+	?>
+	
 <div id="container">
 	<div id="header"><br />Juega y gana!!</div>
 	<div id="menu">
